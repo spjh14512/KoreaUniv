@@ -1,0 +1,35 @@
+00:41:15 **** Build of configuration Debug for project csd_lab ****
+make all 
+make --no-print-directory pre-build
+a9-linaro-pre-build-step
+' '
+make --no-print-directory main-build
+'Building file: ../src/csd_asm.S'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/csd_asm.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -ID:/Users/PC/Desktop/KoreaUniv/COSE321_Computer_System_Design/class_experiments_v21/csd_platform/export/csd_platform/sw/csd_platform/standalone_domain/bspinclude/include -MMD -MP -MF"src/csd_asm.d" -MT"src/csd_asm.o" -o "src/csd_asm.o" "../src/csd_asm.S"
+'Finished building: ../src/csd_asm.S'
+' '
+'Building file: ../src/csd_main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/csd_main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -ID:/Users/PC/Desktop/KoreaUniv/COSE321_Computer_System_Design/class_experiments_v21/csd_platform/export/csd_platform/sw/csd_platform/standalone_domain/bspinclude/include -MMD -MP -MF"src/csd_main.d" -MT"src/csd_main.o" -o "src/csd_main.o" "../src/csd_main.c"
+'Finished building: ../src/csd_main.c'
+' '
+'Building file: ../src/platform.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -ID:/Users/PC/Desktop/KoreaUniv/COSE321_Computer_System_Design/class_experiments_v21/csd_platform/export/csd_platform/sw/csd_platform/standalone_domain/bspinclude/include -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
+'Finished building: ../src/platform.c'
+' '
+'Building target: csd_lab.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -LD:/Users/PC/Desktop/KoreaUniv/COSE321_Computer_System_Design/class_experiments_v21/csd_platform/export/csd_platform/sw/csd_platform/standalone_domain/bsplib/lib -o "csd_lab.elf"  ./src/csd_asm.o ./src/csd_main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: csd_lab.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size csd_lab.elf  |tee "csd_lab.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  18868	   1232	  22568	  42668	   a6ac	csd_lab.elf
+'Finished building: csd_lab.elf.size'
+' '
+
+00:41:18 Build Finished (took 2s.854ms)
+

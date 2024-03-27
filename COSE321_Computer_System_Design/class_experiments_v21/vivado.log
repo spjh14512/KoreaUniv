@@ -1,0 +1,59 @@
+#-----------------------------------------------------------
+# Vivado v2021.1 (64-bit)
+# SW Build 3247384 on Thu Jun 10 19:36:33 MDT 2021
+# IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+# Start of session at: Thu Mar 28 00:26:30 2024
+# Process ID: 17600
+# Current directory: d:/Users/PC/Desktop/KoreaUniv/COSE321_Computer_System_Design/class_experiments_v21
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent2932 d:\Users\PC\Desktop\KoreaUniv\COSE321_Computer_System_Design\class_experiments_v21\class_experiments_v21.xpr
+# Log file: d:/Users/PC/Desktop/KoreaUniv/COSE321_Computer_System_Design/class_experiments_v21/vivado.log
+# Journal file: d:/Users/PC/Desktop/KoreaUniv/COSE321_Computer_System_Design/class_experiments_v21\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project d:/Users/PC/Desktop/KoreaUniv/COSE321_Computer_System_Design/class_experiments_v21/class_experiments_v21.xpr
+INFO: [ProjectBase 1-489] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience issues with IP, Block Designs, or files not being found, please consider moving the project to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter.
+Current project path is 'd:/Users/PC/Desktop/KoreaUniv/COSE321_Computer_System_Design/class_experiments_v21'
+INFO: [Project 1-313] Project file moved from 'C:/Users/suhtw/Downloads/cose321_level_trigger/class_experiments_v21' since last save.
+WARNING: [filemgmt 56-2] Board Part Repository Path: Could not find the directory 'd:/Users/PC/Desktop/AppData/Roaming/Xilinx/Vivado/2021.1/xhub/board_store/xilinx_board_store', nor could it be found using path 'C:/Users/suhtw/AppData/Roaming/Xilinx/Vivado/2021.1/xhub/board_store/xilinx_board_store'.
+Scanning sources...
+Finished scanning sources
+CRITICAL WARNING: [Board 49-67] The board_part definition was not found for avnet.com:zedboard:part0:1.4. This can happen sometimes when you use custom board part. You can resolve this issue by setting 'board.repoPaths' parameter, pointing to the location of custom board files. Valid board_part values can be retrieved with the 'get_board_parts' Tcl command.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Vivado/2021.1/data/ip'.
+WARNING: [BD 41-1661] One or more IPs have been locked in the design 'SoC.bd'. Please run report_ip_status for more details and recommendations on how to fix this issue.
+List of locked IPs:
+SoC_axi_gpio_0_0
+SoC_processing_system7_0_0
+SoC_axi_gpio_0_1
+SoC_rst_ps7_0_100M_0
+
+open_project: Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1117.379 ; gain = 0.000
+update_compile_order -fileset sources_1
+write_hw_platform -fixed -include_bit -force -file d:/Users/PC/Desktop/KoreaUniv/COSE321_Computer_System_Design/class_experiments_v21/SoC_wrapper.xsa
+INFO: [Vivado 12-4895] Creating Hardware Platform: d:/Users/PC/Desktop/KoreaUniv/COSE321_Computer_System_Design/class_experiments_v21/SoC_wrapper.xsa ...
+WARNING: [Vivado_Tcl 4-413] Exported hardware design may be stale because Block Design is locked for the following reasons 
+* Block design contains locked IPs. Please run report_ip_status for more details and recommendations on how to fix this issue. 
+List of locked IPs: 
+SoC_axi_gpio_0_0
+SoC_processing_system7_0_0
+SoC_axi_gpio_0_1
+SoC_rst_ps7_0_100M_0
+
+INFO: [Hsi 55-2053] elapsed time for repository (D:/Vivado/2021.1/data/embeddedsw) loading 1 seconds
+WARNING: [Vivado_Tcl 4-413] Exported hardware design may be stale because Block Design is locked for the following reasons 
+* Block design contains locked IPs. Please run report_ip_status for more details and recommendations on how to fix this issue. 
+List of locked IPs: 
+SoC_axi_gpio_0_0
+SoC_processing_system7_0_0
+SoC_axi_gpio_0_1
+SoC_rst_ps7_0_100M_0
+
+INFO: [Vivado 12-12464] The Hardware Platform can be used for Hardware
+INFO: [Vivado 12-4896] Successfully created Hardware Platform: d:/Users/PC/Desktop/KoreaUniv/COSE321_Computer_System_Design/class_experiments_v21/SoC_wrapper.xsa
+write_hw_platform: Time (s): cpu = 00:00:03 ; elapsed = 00:00:07 . Memory (MB): peak = 1146.641 ; gain = 29.262
+INFO: [Vivado 12-8231] Launching Vitis
+INFO: [Vivado 12-417] Running vitis
+INFO: [Vivado 12-8232] Vitis launch initiated. Please check console for any further messages.
+exit
+INFO: [Common 17-206] Exiting Vivado at Thu Mar 28 00:42:24 2024...
