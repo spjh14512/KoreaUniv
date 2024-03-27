@@ -87,17 +87,99 @@ def depthFirstSearch(problem):
     print("Start's successors:", problem.getSuccessors(problem.getStartState()))
     """
     "*** YOUR CODE HERE ***"
-    util.raiseNotDefined()
+    st = util.Stack()
+    startState = problem.getStartState()
+    st.push((startState, 'Stop', 0))
+    vis = set() # visited
+    parent = dict() # for back tracing
+
+    while True:
+        if st.isEmpty():
+            return []
+        currentSuccessor = st.pop()
+        currentState = currentSuccessor[0]
+        vis.add(currentState)
+        if problem.isGoalState(currentState):
+            break
+        successors = problem.getSuccessors(currentState)
+        unvis_successors = list(filter(lambda x: x[0] not in vis, successors))
+        for successor in unvis_successors:
+            st.push(successor)
+            parent[successor[0]] = (currentState, successor[1])
+
+    actions = []
+    while currentState != startState:
+        back = parent[currentState]
+        actions.append(back[1])
+        currentState = back[0]
+
+    return list(reversed(actions))
+
+    # util.raiseNotDefined()
 
 def breadthFirstSearch(problem):
     """Search the shallowest nodes in the search tree first."""
     "*** YOUR CODE HERE ***"
-    util.raiseNotDefined()
+    queue = util.Queue()
+    startState = problem.getStartState()
+    queue.push((startState, 'Stop', 0))
+    vis = set()
+    vis.add(startState)
+    parent = dict()
+
+    while True:
+        if queue.isEmpty():
+            return []
+        currentSuccessor = queue.pop()
+        currentState = currentSuccessor[0]
+        if problem.isGoalState(currentState):
+            break
+        successors = problem.getSuccessors(currentState)
+        unvis_successors = list(filter(lambda x: x[0] not in vis, successors))
+        for successor in unvis_successors:
+            vis.add(successor[0])
+            queue.push(successor)
+            parent[successor[0]] = (currentState, successor[1])
+
+    actions = []
+    while currentState != startState:
+        back = parent[currentState]
+        actions.append(back[1])
+        currentState = back[0]
+
+    return list(reversed(actions))
+
+    # util.raiseNotDefined()
 
 def uniformCostSearch(problem):
     """Search the node of least total cost first."""
     "*** YOUR CODE HERE ***"
-    util.raiseNotDefined()
+    pq = util.PriorityQueueWithFunction(lambda x: x[1]) # (State, Dist, Path)
+    sure = set()
+
+    startState = problem.getStartState()
+    pq.push((startState, 0, [])) # (State, Dist, Path)
+
+    while True:
+        if pq.isEmpty():
+            return []
+        pqTop = pq.pop()
+        currentState = pqTop[0]
+        currentDist = pqTop[1]
+        currentPath = pqTop[2]
+
+        if currentState in sure:
+            continue
+        sure.add(currentState)
+        if problem.isGoalState(currentState):
+            return currentPath
+        successors = problem.getSuccessors(currentState)
+        unsure_successors = list(filter(lambda x: x[0] not in sure, successors))
+        for successor in unsure_successors:
+            nextState, action, edgeCost = successor
+            pq.push((nextState, currentDist + edgeCost, currentPath + [action]))
+
+    # util.raiseNotDefined()
 
 def nullHeuristic(state, problem=None):
     """
