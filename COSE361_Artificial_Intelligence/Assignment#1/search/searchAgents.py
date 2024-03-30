@@ -262,6 +262,12 @@ def euclideanHeuristic(position, problem, info={}):
     xy2 = problem.goal
     return ( (xy1[0] - xy2[0]) ** 2 + (xy1[1] - xy2[1]) ** 2 ) ** 0.5
 
+def myHeuristic(position, problem, info={}):
+    "The Chebyshev distance heuristic for a PositionSearchProblem"
+    xy1 = position
+    xy2 = problem.goal
+    return max(abs(xy1[0] - xy2[0]), abs(xy1[1] - xy2[1])) #  max(x_diff, y_diff)
+
 #####################################################
 # This portion is incomplete.  Time to write code!  #
 #####################################################

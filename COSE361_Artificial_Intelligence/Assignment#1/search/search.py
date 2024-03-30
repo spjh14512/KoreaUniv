@@ -19,6 +19,7 @@ Pacman agents (in searchAgents.py).
 
 import util
 
+
 class SearchProblem:
     """
     This class outlines the structure of a search problem, but doesn't implement
@@ -70,7 +71,8 @@ def tinyMazeSearch(problem):
     from game import Directions
     s = Directions.SOUTH
     w = Directions.WEST
-    return  [s, s, w, s, w, w, s, w]
+    return [s, s, w, s, w, w, s, w]
+
 
 def depthFirstSearch(problem):
     """
@@ -87,55 +89,56 @@ def depthFirstSearch(problem):
     print("Start's successors:", problem.getSuccessors(problem.getStartState()))
     """
     "*** YOUR CODE HERE ***"
-    st = util.Stack()
+    st = util.Stack()  # use stack for DFS
     startState = problem.getStartState()
-    st.push((startState, 'Stop', 0))
-    vis = set() # visited
-    parent = dict() # for back tracing
+    st.push((startState, 'Stop', 0))  # push startState
+    vis = set()  # bookkeeping explored states
+    parent = dict()  # for back tracing
 
     while True:
-        if st.isEmpty():
+        if st.isEmpty():  # no way to goal -> return empty list
             return []
         currentSuccessor = st.pop()
         currentState = currentSuccessor[0]
-        vis.add(currentState)
-        if problem.isGoalState(currentState):
+        vis.add(currentState)  # mark visited
+        if problem.isGoalState(currentState):  # found path
             break
         successors = problem.getSuccessors(currentState)
-        unvis_successors = list(filter(lambda x: x[0] not in vis, successors))
+        unvis_successors = list(filter(lambda x: x[0] not in vis, successors))  # filter unvisited successors
         for successor in unvis_successors:
             st.push(successor)
             parent[successor[0]] = (currentState, successor[1])
 
     actions = []
     while currentState != startState:
-        back = parent[currentState]
+        back = parent[currentState]  # traceback from goalState to startState
         actions.append(back[1])
         currentState = back[0]
 
-    return list(reversed(actions))
+    return list(reversed(actions))  # resulting sequence of actions is in reversed order
 
     # util.raiseNotDefined()
+
 
 def breadthFirstSearch(problem):
     """Search the shallowest nodes in the search tree first."""
     "*** YOUR CODE HERE ***"
-    queue = util.Queue()
+    queue = util.Queue()  # use queue for BFS
     startState = problem.getStartState()
-    queue.push((startState, 'Stop', 0))
-    vis = set()
+    queue.push((startState, 'Stop', 0))  # push startState
+    vis = set()  # bookkeeping explored states
     vis.add(startState)
-    parent = dict()
+    parent = dict()  # for back tracing
 
     while True:
-        if queue.isEmpty():
+        if queue.isEmpty():  # no way to goal -> return empty
             return []
         currentSuccessor = queue.pop()
         currentState = currentSuccessor[0]
-        if problem.isGoalState(currentState):
+        if problem.isGoalState(currentState):  # found path
             break
         successors = problem.getSuccessors(currentState)
-        unvis_successors = list(filter(lambda x: x[0] not in vis, successors))
+        unvis_successors = list(filter(lambda x: x[0] not in vis, successors))  # filter unvisited successors
         for successor in unvis_successors:
             vis.add(successor[0])
             queue.push(successor)
@@ -143,43 +146,45 @@ def breadthFirstSearch(problem):
 
     actions = []
     while currentState != startState:
-        back = parent[currentState]
+        back = parent[currentState]  # traceback from goal to start
         actions.append(back[1])
         currentState = back[0]
 
-    return list(reversed(actions))
+    return list(reversed(actions))  # resulting sequence of actions is in reversed order
 
     # util.raiseNotDefined()
+
 
 def uniformCostSearch(problem):
     """Search the node of least total cost first."""
     "*** YOUR CODE HERE ***"
-    pq = util.PriorityQueueWithFunction(lambda x: x[1]) # (State, Dist, Path)
-    sure = set()
+    pq = util.PriorityQueueWithFunction(lambda x: x[1])  # (State, Dist, Path), ascending priority by distance
+    sure = set()  # states popped from pq
 
     startState = problem.getStartState()
-    pq.push((startState, 0, [])) # (State, Dist, Path)
+    pq.push((startState, 0, []))  # (State, Dist, Path)
 
     while True:
-        if pq.isEmpty():
+        if pq.isEmpty():  # no way to goal -> return empty
             return []
         pqTop = pq.pop()
         currentState = pqTop[0]
         currentDist = pqTop[1]
         currentPath = pqTop[2]
 
-        if currentState in sure:
+        if currentState in sure:  # pass already explored
             continue
         sure.add(currentState)
-        if problem.isGoalState(currentState):
+        if problem.isGoalState(currentState):  # found the shortest path -> return path to current state
             return currentPath
         successors = problem.getSuccessors(currentState)
-        unsure_successors = list(filter(lambda x: x[0] not in sure, successors))
+        unsure_successors = list(filter(lambda x: x[0] not in sure, successors))  # filter unexplored
         for successor in unsure_successors:
             nextState, action, edgeCost = successor
-            pq.push((nextState, currentDist + edgeCost, currentPath + [action]))
+            pq.push((nextState, currentDist + edgeCost, currentPath + [action]))  # update dist & append action
 
     # util.raiseNotDefined()
+
 
 def nullHeuristic(state, problem=None):
     """
@@ -188,14 +193,18 @@ def nullHeuristic(state, problem=None):
     """
     return 0
 
+
 def aStarSearch(problem, heuristic=nullHeuristic):
     """Search the node that has the lowest combined cost and heuristic first."""
     "*** YOUR CODE HERE ***"
-    pq = util.PriorityQueueWithFunction(lambda x: x[3])  # (State, Dist, Path, f(n))
+    ### similar to UCS, but heuristic value is added ###
+    ### f = (dist from startState) + (heuristic value of the state) ###
+    pq = util.PriorityQueueWithFunction(lambda x: x[3])  # (State, Dist, Path, f-value)
     sure = set()
 
     startState = problem.getStartState()
-    pq.push((startState, 0, [], heuristic(startState, problem)))  # (State, Dist, Path)
+    pq.push((startState, 0, [], heuristic(startState, problem)))  # (State, Dist, Path, f-value)
+    # ascending priority by f-value
 
     while True:
         if pq.isEmpty():
@@ -205,16 +214,17 @@ def aStarSearch(problem, heuristic=nullHeuristic):
         currentDist = pqTop[1]
         currentPath = pqTop[2]
 
-        if currentState in sure:
+        if currentState in sure:  # pass already explored
             continue
         sure.add(currentState)
-        if problem.isGoalState(currentState):
+        if problem.isGoalState(currentState):  # found path -> return path to current state
             return currentPath
         successors = problem.getSuccessors(currentState)
         unsure_successors = list(filter(lambda x: x[0] not in sure, successors))
-        for successor in unsure_successors:
+        for successor in unsure_successors:  # filter unexplored
             nextState, action, edgeCost = successor
-            pq.push((nextState, currentDist + edgeCost, currentPath + [action], currentDist + edgeCost + heuristic(nextState, problem)))
+            pq.push((nextState, currentDist + edgeCost, currentPath + [action],
+                     currentDist + edgeCost + heuristic(nextState, problem)))  # update distance & f-value, append action
 
     # util.raiseNotDefined()
 
