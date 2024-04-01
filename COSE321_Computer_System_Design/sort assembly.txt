@@ -2,42 +2,42 @@ int arr;
 
 for (int i = 0; i < 31; i++)
 {
-	int max = arr[i];
-	int max_index = i;
+	int min = arr[i];
+	int min_index = i;
 	for (int j = i + 1; j < 32; j++)
 	{
-		if (arr[j] > max)
+		if (arr[j] < min)
 		{
-			max = arr[j];
-			max_index = j;
+			min = arr[j];
+			min_index = j;
 		}
 	}
 	int temp = arr[i];
-	arr[i] = max;
+	arr[i] = min;
 	arr[j] = temp;
 }
 
 --------------------------------------------------------------------------------------------------------
-arr -> r0	i -> r1	j -> r2	max -> r3		max_index -> r4		temp -> r5	
+arr -> r0	i -> r1	j -> r2	min -> r3		min_index -> r4		temp -> r5	
 --------------------------------------------------------------------------------------------------------
 
-														MOV r0, arr;
+														LDR r0, arr;
 i = 0;														MOV r1, #0;
 
 LOOP1: 													LOOP1:
 {
-	if (i < 31) goto EXIT1;										CMP r1, #31; Blt EXIT1; 
-	max = arr[i];  // 											LDR r3, r0[r1 * 4];
-	max_index = i;  // 										MOV r4, r1;
+	if (i >= 31) goto EXIT1;										CMP r1, #31; Bge EXIT1; 
+	min = arr[i];  // 											LDR r3, r0[r1 * 4];
+	min_index = i;  // 										MOV r4, r1;
 
 	j = i + 1;  // 											ADD r2, r1, #1;
 	LOOP2:												LOOP2:
 	{
-		if (j < 32) goto EXIT2;  // 								CMP r2, #32; Blt EXIT2;
-		if (arr[j] > max)  // 									LDR r5, r0[r2 * 4]; CMP r5, r3;
+		if (j >= 32) goto EXIT2;  // 								CMP r2, #32; Bge EXIT2;
+		if (arr[j] < min)  // 									LDR r5, r0[r2 * 4]; CMP r5, r3;
 		{
-			max = arr[j];  // 									MOVgt r3, r5;
-			max_index = j;  // 								MOVgt r4, r5;
+			min = arr[j];  // 									LDRlt r3, [r0, r2, LSL #2];
+			min_index = j;  // 								MOVlt r4, r2;
 		}
 
 		j++;  // 											ADD r2, #1;
@@ -45,10 +45,85 @@ LOOP1: 													LOOP1:
 	}
 	EXIT2:												EXIT2:
 	int temp = arr[i]; // 										LDR r5, r0[r1 * 4];
-	arr[i] = max;  // 											STR r3, r0[r1 * 4];
-	arr[max_index] = temp;										STR r5, r0[r4 * 4];
+	arr[i] = min;  // 											STR r3, r0[r1 * 4];
+	arr[min_index] = temp;										STR r5, r0[r4 * 4];
 	
 	i++;													ADD r1, #1;
 	goto LOOP1;											B LOOP1;
 }
 EXIT1:													EXIT1:
+
+
+
+-------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------
+#define csd_LED_ADDR 0x41200000
+
+.extern csd_main
+
+.global main
+
+main:
+
+	ldr r0, =Input_data // get input array address
+	mov r1, #0  		// i = 0
+loop1: // after i-th loop1, the i-th smallest element is sorted
+	/* LOOP 31 TIMES */
+	cmp r1, #31
+	bge exit1
+
+	ldr r3, [r0, +r1, lsl #2] // set initial minimum value
+	mov r4, r1 		// set initial minimum value index
+	add r2, r1, #1 	// j = i + 1
+loop2:
+	/* LOOP (i + 1) to 32 */
+	cmp r2, #32
+	bge exit2
+
+	/* find and update minimum value */
+	ldr r5, [r0, +r2, lsl #2]
+	cmp r5, r3
+	ldrlt r3, [r0, +r2, lsl #2]
+	movlt r4, r2
+
+	add r2, #1  // j++
+	b loop2
+
+exit2:
+	/* SWAP 'i-th element' and 'i-th smallest element' */
+	ldr r5, [r0, +r1, lsl #2]
+	str r3, [r0, +r1, lsl #2]
+	str r5, [r0, +r4, lsl #2]
+
+	add r1, #1  // i++
+	b loop1
+
+
+exit1:
+	ldr r1, =Output_data // get output array address
+	mov r2, #0
+loop3:
+	/* COPY Input array to Output array */
+	/* LOOP 32 TIMES */
+	ldr r3, [r0], #4
+	str r3, [r1], #4
+	add r2, #1
+	cmp r2, #32
+	blt loop3
+
+/* END */
+nop
+
+.data
+.align 4
+Input_data:
+ 	.word 2, 0, -7, -1, 3, 8, -4, 10
+ 	.word -9, -16, 15, 13, 1, 4, -3, 14
+ 	.word -8, -10, -15, 6, -13, -5, 9, 12
+ 	.word -11, -14, -6, 11, 5, 7, -2, -12
+
+Output_data:
+ 	.word 0, 0, 0, 0, 0, 0, 0, 0
+	.word 0, 0, 0, 0, 0, 0, 0, 0
+	.word 0, 0, 0, 0, 0, 0, 0, 0
+	.word 0, 0, 0, 0, 0, 0, 0, 0

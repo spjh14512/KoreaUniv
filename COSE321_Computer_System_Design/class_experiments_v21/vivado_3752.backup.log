@@ -2,10 +2,10 @@
 # Vivado v2021.1 (64-bit)
 # SW Build 3247384 on Thu Jun 10 19:36:33 MDT 2021
 # IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
-# Start of session at: Sat Mar 30 21:52:26 2024
-# Process ID: 6744
+# Start of session at: Fri Mar 29 13:01:48 2024
+# Process ID: 3752
 # Current directory: C:/Users/admin/Desktop/KoreaUniv/COSE321_Computer_System_Design/class_experiments_v21
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent10848 C:\Users\admin\Desktop\KoreaUniv\COSE321_Computer_System_Design\class_experiments_v21\class_experiments_v21.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent5028 C:\Users\admin\Desktop\KoreaUniv\COSE321_Computer_System_Design\class_experiments_v21\class_experiments_v21.xpr
 # Log file: C:/Users/admin/Desktop/KoreaUniv/COSE321_Computer_System_Design/class_experiments_v21/vivado.log
 # Journal file: C:/Users/admin/Desktop/KoreaUniv/COSE321_Computer_System_Design/class_experiments_v21\vivado.jou
 #-----------------------------------------------------------
@@ -29,13 +29,7 @@ SoC_processing_system7_0_0
 SoC_axi_gpio_0_1
 SoC_rst_ps7_0_100M_0
 
-open_project: Time (s): cpu = 00:00:05 ; elapsed = 00:00:10 . Memory (MB): peak = 1116.820 ; gain = 0.000
+open_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:11 . Memory (MB): peak = 1117.781 ; gain = 0.000
 update_compile_order -fileset sources_1
-INFO: [Vivado 12-8231] Launching Vitis
-INFO: [Vivado 12-417] Running vitis
-INFO: [Vivado 12-8232] Vitis launch initiated. Please check console for any further messages.
-INFO: [Vivado 12-8231] Launching Vitis
-INFO: [Vivado 12-417] Running vitis
-INFO: [Vivado 12-8232] Vitis launch initiated. Please check console for any further messages.
 exit
-INFO: [Common 17-206] Exiting Vivado at Sat Mar 30 21:59:07 2024...
+INFO: [Common 17-206] Exiting Vivado at Fri Mar 29 13:04:45 2024...
