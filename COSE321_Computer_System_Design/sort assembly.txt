@@ -1,0 +1,54 @@
+int arr;
+
+for (int i = 0; i < 31; i++)
+{
+	int max = arr[i];
+	int max_index = i;
+	for (int j = i + 1; j < 32; j++)
+	{
+		if (arr[j] > max)
+		{
+			max = arr[j];
+			max_index = j;
+		}
+	}
+	int temp = arr[i];
+	arr[i] = max;
+	arr[j] = temp;
+}
+
+--------------------------------------------------------------------------------------------------------
+arr -> r0	i -> r1	j -> r2	max -> r3		max_index -> r4		temp -> r5	
+--------------------------------------------------------------------------------------------------------
+
+														MOV r0, arr;
+i = 0;														MOV r1, #0;
+
+LOOP1: 													LOOP1:
+{
+	if (i < 31) goto EXIT1;										CMP r1, #31; Blt EXIT1; 
+	max = arr[i];  // 											LDR r3, r0[r1 * 4];
+	max_index = i;  // 										MOV r4, r1;
+
+	j = i + 1;  // 											ADD r2, r1, #1;
+	LOOP2:												LOOP2:
+	{
+		if (j < 32) goto EXIT2;  // 								CMP r2, #32; Blt EXIT2;
+		if (arr[j] > max)  // 									LDR r5, r0[r2 * 4]; CMP r5, r3;
+		{
+			max = arr[j];  // 									MOVgt r3, r5;
+			max_index = j;  // 								MOVgt r4, r5;
+		}
+
+		j++;  // 											ADD r2, #1;
+		goto LOOP2;  // 										B LOOP2;
+	}
+	EXIT2:												EXIT2:
+	int temp = arr[i]; // 										LDR r5, r0[r1 * 4];
+	arr[i] = max;  // 											STR r3, r0[r1 * 4];
+	arr[max_index] = temp;										STR r5, r0[r4 * 4];
+	
+	i++;													ADD r1, #1;
+	goto LOOP1;											B LOOP1;
+}
+EXIT1:													EXIT1:
