@@ -1,10 +1,10 @@
-00:41:19 **** Build of configuration Debug for project csd_lab_system ****
+20:30:26 **** Build of configuration Debug for project csd_lab_system ****
 make all 
 Generating bif file for the system project
-generate_system_bif.bat 51540 D:/Users/PC/Desktop/KoreaUniv/COSE321_Computer_System_Design/class_experiments_v21/csd_platform/export/csd_platform/csd_platform.xpfm standalone_domain D:/Users/PC/Desktop/KoreaUniv/COSE321_Computer_System_Design/class_experiments_v21/csd_lab_system/Debug/system.bif
+generate_system_bif.bat 55363 D:/Users/PC/Desktop/KoreaUniv/COSE321_Computer_System_Design/class_experiments_v21/csd_platform/export/csd_platform/csd_platform.xpfm standalone_domain D:/Users/PC/Desktop/KoreaUniv/COSE321_Computer_System_Design/class_experiments_v21/csd_lab_system/Debug/system.bif
 sdcard_gen --xpfm D:/Users/PC/Desktop/KoreaUniv/COSE321_Computer_System_Design/class_experiments_v21/csd_platform/export/csd_platform/csd_platform.xpfm --sys_config csd_platform --bif D:/Users/PC/Desktop/KoreaUniv/COSE321_Computer_System_Design/class_experiments_v21/csd_lab_system/Debug/system.bif --bitstream D:/Users/PC/Desktop/KoreaUniv/COSE321_Computer_System_Design/class_experiments_v21/csd_lab/_ide/bitstream/SoC_wrapper.bit --elf D:/Users/PC/Desktop/KoreaUniv/COSE321_Computer_System_Design/class_experiments_v21/csd_lab/Debug/csd_lab.elf,ps7_cortexa9_0
 creating BOOT.BIN using D:/Users/PC/Desktop/KoreaUniv/COSE321_Computer_System_Design/class_experiments_v21/csd_lab/_ide/bitstream/SoC_wrapper.bit
 Running D:/Vitis/2021.1/bin/bootgen  -image D:/Users/PC/Desktop/KoreaUniv/COSE321_Computer_System_Design/class_experiments_v21/csd_lab_system/Debug/sd_card_temp/boot.bif -w -o i BOOT.BIN
 
-00:41:31 Build Finished (took 11s.591ms)
+20:30:35 Build Finished (took 8s.795ms)
 
