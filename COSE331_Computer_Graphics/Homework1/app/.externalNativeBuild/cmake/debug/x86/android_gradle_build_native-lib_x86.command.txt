@@ -1,0 +1,8 @@
+Executable : C:\Users\PC\AppData\Local\Android\Sdk\cmake\3.6.4111459\bin\cmake.exe
+arguments : 
+--build
+D:\Users\PC\Desktop\KoreaUniv\COSE331_Computer_Graphics\Homework1\app\.externalNativeBuild\cmake\debug\x86
+--target
+native-lib
+jvmArgs : 
+
