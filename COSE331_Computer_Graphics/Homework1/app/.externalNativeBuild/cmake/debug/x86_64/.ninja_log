@@ -9,3 +9,13 @@
 350	3780	0	CMakeFiles/native-lib.dir/src/main/cpp/material.cpp.o	aa9d90f35d622335
 514	3924	0	CMakeFiles/native-lib.dir/src/main/cpp/camera.cpp.o	ae638ad5f245f384
 3924	4153	0	../../../../build/intermediates/cmake/debug/obj/x86_64/libnative-lib.so	5e90c95d85d98a83
+8	1816	0	CMakeFiles/native-lib.dir/src/main/cpp/scene.cpp.o	84ed830822353cdf
+1817	2092	0	../../../../build/intermediates/cmake/debug/obj/x86_64/libnative-lib.so	5e90c95d85d98a83
+9	2223	0	CMakeFiles/native-lib.dir/src/main/cpp/scene.cpp.o	84ed830822353cdf
+2223	2558	0	../../../../build/intermediates/cmake/debug/obj/x86_64/libnative-lib.so	5e90c95d85d98a83
+7	2079	0	CMakeFiles/native-lib.dir/src/main/cpp/scene.cpp.o	84ed830822353cdf
+2079	2319	0	../../../../build/intermediates/cmake/debug/obj/x86_64/libnative-lib.so	5e90c95d85d98a83
+7	2102	0	CMakeFiles/native-lib.dir/src/main/cpp/scene.cpp.o	84ed830822353cdf
+2102	2364	0	../../../../build/intermediates/cmake/debug/obj/x86_64/libnative-lib.so	5e90c95d85d98a83
+9	2236	0	CMakeFiles/native-lib.dir/src/main/cpp/scene.cpp.o	84ed830822353cdf
+2237	2481	0	../../../../build/intermediates/cmake/debug/obj/x86_64/libnative-lib.so	5e90c95d85d98a83

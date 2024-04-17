@@ -56,8 +56,25 @@ void Scene::setup(AAssetManager* aAssetManager) {
     mat4 scaleM;
     // In OpenGL, the matrix must be transposed
 
-    // scaleM = ;
-    // teapot->worldMatrix =;
+    scaleM = transpose(mat4(    // scale along x-axis
+            scaleArbitrary, 0, 0, 0,
+            0, 1, 0, 0,
+            0, 0, 1, 0,
+            0, 0, 0, 1
+            ));
+    mat4 T = transpose(mat4(
+            1, 0, 0, startingPoints[0],
+            0, 1, 0, startingPoints[1],
+            0, 0, 1, startingPoints[2],
+            0, 0, 0, 1
+            ));
+    vec3 u = normalize(vec3(endingPoints[0] - startingPoints[0], endingPoints[1] - startingPoints[1], endingPoints[2] - startingPoints[2]));
+    // check if u is parallel to y-axis
+    vec3 v = (u.x == 0 and u.z == 0) ? normalize(cross(u, vec3(1, 0, 0))) : normalize(cross(u, vec3(0, 1, 0)));
+    vec3 n = cross(u, v);
+    mat4 R = mat4(vec4(u, 0), vec4(v, 0), vec4(n, 0), vec4(0, 0, 0, 1));
+
+    teapot->worldMatrix = T * R * scaleM * transpose(R) * inverse(T) * teapot->worldMatrix;
     //////////////////////////////
 }
 
@@ -82,8 +99,25 @@ void Scene::update(float deltaTime) {
 
     mat4 rotMat;
 
-    // rotMat =
-    // teapot->worldMatrix = ;
+    rotMat = transpose(mat4(    // rotate along x-axis
+            1, 0, 0, 0,
+            0, cos(deltaTime), -sin(-deltaTime), 0,
+            0, sin(-deltaTime), cos(deltaTime), 0,
+            0, 0, 0, 1
+            ));
+    mat4 T = transpose(mat4(
+            1, 0, 0, startingPoints[0],
+            0, 1, 0, startingPoints[1],
+            0, 0, 1, startingPoints[2],
+            0, 0, 0, 1
+            ));
+    vec3 u = normalize(vec3(endingPoints[0] - startingPoints[0], endingPoints[1] - startingPoints[1], endingPoints[2] - startingPoints[2]));
+    // check if u is parallel to y-axis
+    vec3 v = (u.x == 0 and u.z == 0) ? normalize(cross(u, vec3(1, 0, 0))) : normalize(cross(u, vec3(0, 1, 0)));
+    vec3 n = cross(u, v);
+    mat4 R = mat4(vec4(u, 0), vec4(v, 0), vec4(n, 0), vec4(0, 0, 0, 1));
+
+    teapot->worldMatrix = T * R * rotMat * transpose(R) * inverse(T) * teapot->worldMatrix;
     //////////////////////////////
 
     camera->updateViewMatrix();
