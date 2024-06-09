@@ -1,0 +1,55 @@
+[
+{
+  "directory": "D:/Users/PC/Desktop/KoreaUniv/COSE331_Computer_Graphics/Homework2/app/.cxx/cmake/debug/armeabi-v7a",
+  "command": "C:\\Users\\PC\\AppData\\Local\\Android\\Sdk\\ndk\\19.2.5345600\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=armv7-none-linux-androideabi24 --gcc-toolchain=C:/Users/PC/AppData/Local/Android/Sdk/ndk/19.2.5345600/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/Users/PC/AppData/Local/Android/Sdk/ndk/19.2.5345600/toolchains/llvm/prebuilt/windows-x86_64/sysroot  -Dnative_lib_EXPORTS -I../../../../src/main/cpp/inc  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mfpu=vfpv3-d16 -fno-addrsig -march=armv7-a -mthumb -mfpu=neon -Wa,--noexecstack -Wformat -Werror=format-security -stdlib=libc++ -std=c++14 -O0 -fno-limit-debug-info  -fPIC   -o CMakeFiles\\native-lib.dir\\src\\main\\cpp\\src\\main.cpp.o -c D:\\Users\\PC\\Desktop\\KoreaUniv\\COSE331_Computer_Graphics\\Homework2\\app\\src\\main\\cpp\\src\\main.cpp",
+  "file": "D:/Users/PC/Desktop/KoreaUniv/COSE331_Computer_Graphics/Homework2/app/src/main/cpp/src/main.cpp"
+},
+
+{
+  "directory": "D:/Users/PC/Desktop/KoreaUniv/COSE331_Computer_Graphics/Homework2/app/.cxx/cmake/debug/armeabi-v7a",
+  "command": "C:\\Users\\PC\\AppData\\Local\\Android\\Sdk\\ndk\\19.2.5345600\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=armv7-none-linux-androideabi24 --gcc-toolchain=C:/Users/PC/AppData/Local/Android/Sdk/ndk/19.2.5345600/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/Users/PC/AppData/Local/Android/Sdk/ndk/19.2.5345600/toolchains/llvm/prebuilt/windows-x86_64/sysroot  -Dnative_lib_EXPORTS -I../../../../src/main/cpp/inc  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mfpu=vfpv3-d16 -fno-addrsig -march=armv7-a -mthumb -mfpu=neon -Wa,--noexecstack -Wformat -Werror=format-security -stdlib=libc++ -std=c++14 -O0 -fno-limit-debug-info  -fPIC   -o CMakeFiles\\native-lib.dir\\src\\main\\cpp\\src\\asset.cpp.o -c D:\\Users\\PC\\Desktop\\KoreaUniv\\COSE331_Computer_Graphics\\Homework2\\app\\src\\main\\cpp\\src\\asset.cpp",
+  "file": "D:/Users/PC/Desktop/KoreaUniv/COSE331_Computer_Graphics/Homework2/app/src/main/cpp/src/asset.cpp"
+},
+
+{
+  "directory": "D:/Users/PC/Desktop/KoreaUniv/COSE331_Computer_Graphics/Homework2/app/.cxx/cmake/debug/armeabi-v7a",
+  "command": "C:\\Users\\PC\\AppData\\Local\\Android\\Sdk\\ndk\\19.2.5345600\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=armv7-none-linux-androideabi24 --gcc-toolchain=C:/Users/PC/AppData/Local/Android/Sdk/ndk/19.2.5345600/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/Users/PC/AppData/Local/Android/Sdk/ndk/19.2.5345600/toolchains/llvm/prebuilt/windows-x86_64/sysroot  -Dnative_lib_EXPORTS -I../../../../src/main/cpp/inc  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mfpu=vfpv3-d16 -fno-addrsig -march=armv7-a -mthumb -mfpu=neon -Wa,--noexecstack -Wformat -Werror=format-security -stdlib=libc++ -std=c++14 -O0 -fno-limit-debug-info  -fPIC   -o CMakeFiles\\native-lib.dir\\src\\main\\cpp\\src\\shader.cpp.o -c D:\\Users\\PC\\Desktop\\KoreaUniv\\COSE331_Computer_Graphics\\Homework2\\app\\src\\main\\cpp\\src\\shader.cpp",
+  "file": "D:/Users/PC/Desktop/KoreaUniv/COSE331_Computer_Graphics/Homework2/app/src/main/cpp/src/shader.cpp"
+},
+
+{
+  "directory": "D:/Users/PC/Desktop/KoreaUniv/COSE331_Computer_Graphics/Homework2/app/.cxx/cmake/debug/armeabi-v7a",
+  "command": "C:\\Users\\PC\\AppData\\Local\\Android\\Sdk\\ndk\\19.2.5345600\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=armv7-none-linux-androideabi24 --gcc-toolchain=C:/Users/PC/AppData/Local/Android/Sdk/ndk/19.2.5345600/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/Users/PC/AppData/Local/Android/Sdk/ndk/19.2.5345600/toolchains/llvm/prebuilt/windows-x86_64/sysroot  -Dnative_lib_EXPORTS -I../../../../src/main/cpp/inc  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mfpu=vfpv3-d16 -fno-addrsig -march=armv7-a -mthumb -mfpu=neon -Wa,--noexecstack -Wformat -Werror=format-security -stdlib=libc++ -std=c++14 -O0 -fno-limit-debug-info  -fPIC   -o CMakeFiles\\native-lib.dir\\src\\main\\cpp\\src\\program.cpp.o -c D:\\Users\\PC\\Desktop\\KoreaUniv\\COSE331_Computer_Graphics\\Homework2\\app\\src\\main\\cpp\\src\\program.cpp",
+  "file": "D:/Users/PC/Desktop/KoreaUniv/COSE331_Computer_Graphics/Homework2/app/src/main/cpp/src/program.cpp"
+},
+
+{
+  "directory": "D:/Users/PC/Desktop/KoreaUniv/COSE331_Computer_Graphics/Homework2/app/.cxx/cmake/debug/armeabi-v7a",
+  "command": "C:\\Users\\PC\\AppData\\Local\\Android\\Sdk\\ndk\\19.2.5345600\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=armv7-none-linux-androideabi24 --gcc-toolchain=C:/Users/PC/AppData/Local/Android/Sdk/ndk/19.2.5345600/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/Users/PC/AppData/Local/Android/Sdk/ndk/19.2.5345600/toolchains/llvm/prebuilt/windows-x86_64/sysroot  -Dnative_lib_EXPORTS -I../../../../src/main/cpp/inc  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mfpu=vfpv3-d16 -fno-addrsig -march=armv7-a -mthumb -mfpu=neon -Wa,--noexecstack -Wformat -Werror=format-security -stdlib=libc++ -std=c++14 -O0 -fno-limit-debug-info  -fPIC   -o CMakeFiles\\native-lib.dir\\src\\main\\cpp\\src\\scene.cpp.o -c D:\\Users\\PC\\Desktop\\KoreaUniv\\COSE331_Computer_Graphics\\Homework2\\app\\src\\main\\cpp\\src\\scene.cpp",
+  "file": "D:/Users/PC/Desktop/KoreaUniv/COSE331_Computer_Graphics/Homework2/app/src/main/cpp/src/scene.cpp"
+},
+
+{
+  "directory": "D:/Users/PC/Desktop/KoreaUniv/COSE331_Computer_Graphics/Homework2/app/.cxx/cmake/debug/armeabi-v7a",
+  "command": "C:\\Users\\PC\\AppData\\Local\\Android\\Sdk\\ndk\\19.2.5345600\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=armv7-none-linux-androideabi24 --gcc-toolchain=C:/Users/PC/AppData/Local/Android/Sdk/ndk/19.2.5345600/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/Users/PC/AppData/Local/Android/Sdk/ndk/19.2.5345600/toolchains/llvm/prebuilt/windows-x86_64/sysroot  -Dnative_lib_EXPORTS -I../../../../src/main/cpp/inc  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mfpu=vfpv3-d16 -fno-addrsig -march=armv7-a -mthumb -mfpu=neon -Wa,--noexecstack -Wformat -Werror=format-security -stdlib=libc++ -std=c++14 -O0 -fno-limit-debug-info  -fPIC   -o CMakeFiles\\native-lib.dir\\src\\main\\cpp\\src\\camera.cpp.o -c D:\\Users\\PC\\Desktop\\KoreaUniv\\COSE331_Computer_Graphics\\Homework2\\app\\src\\main\\cpp\\src\\camera.cpp",
+  "file": "D:/Users/PC/Desktop/KoreaUniv/COSE331_Computer_Graphics/Homework2/app/src/main/cpp/src/camera.cpp"
+},
+
+{
+  "directory": "D:/Users/PC/Desktop/KoreaUniv/COSE331_Computer_Graphics/Homework2/app/.cxx/cmake/debug/armeabi-v7a",
+  "command": "C:\\Users\\PC\\AppData\\Local\\Android\\Sdk\\ndk\\19.2.5345600\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=armv7-none-linux-androideabi24 --gcc-toolchain=C:/Users/PC/AppData/Local/Android/Sdk/ndk/19.2.5345600/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/Users/PC/AppData/Local/Android/Sdk/ndk/19.2.5345600/toolchains/llvm/prebuilt/windows-x86_64/sysroot  -Dnative_lib_EXPORTS -I../../../../src/main/cpp/inc  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mfpu=vfpv3-d16 -fno-addrsig -march=armv7-a -mthumb -mfpu=neon -Wa,--noexecstack -Wformat -Werror=format-security -stdlib=libc++ -std=c++14 -O0 -fno-limit-debug-info  -fPIC   -o CMakeFiles\\native-lib.dir\\src\\main\\cpp\\src\\material.cpp.o -c D:\\Users\\PC\\Desktop\\KoreaUniv\\COSE331_Computer_Graphics\\Homework2\\app\\src\\main\\cpp\\src\\material.cpp",
+  "file": "D:/Users/PC/Desktop/KoreaUniv/COSE331_Computer_Graphics/Homework2/app/src/main/cpp/src/material.cpp"
+},
+
+{
+  "directory": "D:/Users/PC/Desktop/KoreaUniv/COSE331_Computer_Graphics/Homework2/app/.cxx/cmake/debug/armeabi-v7a",
+  "command": "C:\\Users\\PC\\AppData\\Local\\Android\\Sdk\\ndk\\19.2.5345600\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=armv7-none-linux-androideabi24 --gcc-toolchain=C:/Users/PC/AppData/Local/Android/Sdk/ndk/19.2.5345600/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/Users/PC/AppData/Local/Android/Sdk/ndk/19.2.5345600/toolchains/llvm/prebuilt/windows-x86_64/sysroot  -Dnative_lib_EXPORTS -I../../../../src/main/cpp/inc  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mfpu=vfpv3-d16 -fno-addrsig -march=armv7-a -mthumb -mfpu=neon -Wa,--noexecstack -Wformat -Werror=format-security -stdlib=libc++ -std=c++14 -O0 -fno-limit-debug-info  -fPIC   -o CMakeFiles\\native-lib.dir\\src\\main\\cpp\\src\\texture.cpp.o -c D:\\Users\\PC\\Desktop\\KoreaUniv\\COSE331_Computer_Graphics\\Homework2\\app\\src\\main\\cpp\\src\\texture.cpp",
+  "file": "D:/Users/PC/Desktop/KoreaUniv/COSE331_Computer_Graphics/Homework2/app/src/main/cpp/src/texture.cpp"
+},
+
+{
+  "directory": "D:/Users/PC/Desktop/KoreaUniv/COSE331_Computer_Graphics/Homework2/app/.cxx/cmake/debug/armeabi-v7a",
+  "command": "C:\\Users\\PC\\AppData\\Local\\Android\\Sdk\\ndk\\19.2.5345600\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=armv7-none-linux-androideabi24 --gcc-toolchain=C:/Users/PC/AppData/Local/Android/Sdk/ndk/19.2.5345600/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/Users/PC/AppData/Local/Android/Sdk/ndk/19.2.5345600/toolchains/llvm/prebuilt/windows-x86_64/sysroot  -Dnative_lib_EXPORTS -I../../../../src/main/cpp/inc  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mfpu=vfpv3-d16 -fno-addrsig -march=armv7-a -mthumb -mfpu=neon -Wa,--noexecstack -Wformat -Werror=format-security -stdlib=libc++ -std=c++14 -O0 -fno-limit-debug-info  -fPIC   -o CMakeFiles\\native-lib.dir\\src\\main\\cpp\\src\\object.cpp.o -c D:\\Users\\PC\\Desktop\\KoreaUniv\\COSE331_Computer_Graphics\\Homework2\\app\\src\\main\\cpp\\src\\object.cpp",
+  "file": "D:/Users/PC/Desktop/KoreaUniv/COSE331_Computer_Graphics/Homework2/app/src/main/cpp/src/object.cpp"
+}
+]
